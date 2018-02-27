@@ -1,0 +1,9 @@
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GameWind.resources
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\CSDGame.csproj.GenerateResource.Cache
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\CSDGame.csprojResolveAssemblyReference.cache
