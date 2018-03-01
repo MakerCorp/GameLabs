@@ -7,3 +7,12 @@ C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\
 C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\jp134125\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\Debug\CSDGame.csprojResolveAssemblyReference.cache
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\bin\Debug\CSDGame.exe.config
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\obj\Debug\CSDGame.csprojResolveAssemblyReference.cache
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\obj\Debug\WindowsFormsApplication1.GameWind.resources
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\obj\Debug\CSDGame.csproj.GenerateResource.Cache
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\bin\Debug\CSDGame.exe
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\bin\Debug\CSDGame.pdb
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\obj\Debug\CSDGame.exe
+C:\Users\jp134125\Desktop\GameLabs\CSDGame\CSDGame\obj\Debug\CSDGame.pdb
