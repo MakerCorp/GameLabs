@@ -1,1 +1,10 @@
 C:\Users\jp134125\AppData\Local\Temporary Projects\Game\bin\Debug\Game.exe.config
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\bin\Debug\Game.exe.config
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\bin\Debug\Game.exe
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\bin\Debug\Game.pdb
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\obj\Debug\Game.HuntingGame.resources
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\obj\Debug\Game.Properties.Resources.resources
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\obj\Debug\Game.exe
+C:\Users\jp134125\Desktop\GameLabs\Game\Game\obj\Debug\Game.pdb

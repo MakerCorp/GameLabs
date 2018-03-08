@@ -21,7 +21,7 @@ namespace Game
 
         // End of the variable
 
-        public void mkBullet(Form form)
+        public void makeBullet(Form form)
         {
             // this function will add bullet to game play
             // it is required to be called from the main class

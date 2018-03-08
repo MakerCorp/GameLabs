@@ -33,15 +33,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picSubmarine = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSubmarine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,70 +86,88 @@
             this.progressBar1.Size = new System.Drawing.Size(178, 23);
             this.progressBar1.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(735, 475);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 71);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "zombie";
-            // 
-            // picPlayer
-            // 
-            this.picPlayer.Location = new System.Drawing.Point(407, 268);
-            this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(78, 94);
-            this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picPlayer.TabIndex = 6;
-            this.picPlayer.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(735, 110);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(71, 71);
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "zombie";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(112, 511);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(71, 71);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "zombie";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.gameEngine);
             // 
-            // Hunting
+            // picPlayer
+            // 
+            this.picPlayer.Image = global::Game.Properties.Resources.PlayerRight;
+            this.picPlayer.Location = new System.Drawing.Point(406, 198);
+            this.picPlayer.Name = "picPlayer";
+            this.picPlayer.Size = new System.Drawing.Size(156, 236);
+            this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picPlayer.TabIndex = 6;
+            this.picPlayer.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Game.Properties.Resources.Backteriophage;
+            this.pictureBox1.Location = new System.Drawing.Point(739, 257);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "virus";
+            // 
+            // picSubmarine
+            // 
+            this.picSubmarine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.picSubmarine.Location = new System.Drawing.Point(386, 88);
+            this.picSubmarine.Name = "picSubmarine";
+            this.picSubmarine.Size = new System.Drawing.Size(100, 50);
+            this.picSubmarine.TabIndex = 10;
+            this.picSubmarine.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Game.Properties.Resources.Backteriophage;
+            this.pictureBox3.Location = new System.Drawing.Point(428, 506);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "virus";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Game.Properties.Resources.Backteriophage;
+            this.pictureBox4.Location = new System.Drawing.Point(194, 349);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(58, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "virus";
+            // 
+            // HuntingGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(923, 667);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.picSubmarine);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Hunting";
+            this.Name = "HuntingGame";
             this.Text = "Hunting";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSubmarine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,9 +181,10 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picPlayer;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox picSubmarine;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

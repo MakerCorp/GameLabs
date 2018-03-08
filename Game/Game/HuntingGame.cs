@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Game
 {
     public partial class HuntingGame : Form
@@ -115,6 +118,11 @@ namespace Game
                 ammo--; // reduce ammo by 1 from total number
                 shoot(bulletGuide); // invoke the shoot function with the bulletGuide string inside it
                 //bulletGuide will transfer up, down, left or right to thr function and that will shoot the bullet that way.
+
+               /*  if (ammo < 1) // if ammo is less than 1
+                {
+                    DropAmmo(); // invoke the drop ammo function
+                } */
             }
         }
 
@@ -173,10 +181,23 @@ namespace Game
             // X is a control and we search for all controls in this loop
             foreach (Control x in this.Controls)
             {
+                /*
                 // if the X is a picture box and X has a tag AMMO
                 if (x is PictureBox && x.Tag == "ammo")
                 {
                     // check is X in hitting the player picture box
+
+                    if (((PictureBox)x).Bounds.IntersectsWith(picPlayer.Bounds))
+                    {
+                        // once the player picks up the ammo
+
+                        this.Controls.Remove(((PictureBox)x)); // remove the ammo picture
+
+                       ((PictureBox)x).Dispose(); // dispose the picture box completely from the program
+                       ammo += 5; // add 5 ammo to the integer
+                    }
+                }
+                 */
 
             // if the bullets hit the 4 borders of the game
             // if x is picture box and x has the tag of bullets
@@ -196,7 +217,39 @@ namespace Game
             }
 
             
-            }
+             // below is the if statement which will be checking if the player hits a virus
+
+                if (x is PictureBox && x.Tag == "virus")
+                {
+                    // below is the if statement thats checking if the bounds of the player and the virus
+
+                    if(((PictureBox)x).Bounds.IntersectsWith(picSubmarine.Bounds))
+                    {
+                        submarineHealth -= 1; // if the virus hits the submarine the we decrase the health by 1
+                    }
+
+                    // move viurs towards the submarine picture box
+
+                   /* if (((PictureBox)x).Left > picSubmarine.Left)
+                    {
+                        ((PictureBox)x).Left -= enemiesSpeed; // move virus towards the left of the submarine
+                    }
+
+                    if (((PictureBox)x).Top > picSubmarine.Top)
+                    {
+                        ((PictureBox)x).Top -= enemiesSpeed; // move virus towards the left of the submarine
+                    }
+
+                    if (((PictureBox)x).Left < picSubmarine.Left)
+                    {
+                        ((PictureBox)x).Left += enemiesSpeed; // move virus towards the left of the submarine
+                    }
+
+                    if (((PictureBox)x).Top < picSubmarine.Top)
+                    {
+                        ((PictureBox)x).Top += enemiesSpeed; // move virus towards the left of the submarine
+                    } */
+                }
                     // below is the second for loop, this is nexted inside the first one
                     // the bullet and zombie needs to be different than each other
                     // then we can use that to determine if the hit each other
@@ -205,87 +258,91 @@ namespace Game
                     {
                         // below is the selection thats identifying the bullet and zombie
 
-                        if ((j is PictureBox && j.Tag == "bullet") && (x is PictureBox && x.Tag == "zombie"))
+                        if ((j is PictureBox && j.Tag == "bullet") && (x is PictureBox && x.Tag == "virus"))
                         {
-                            // below is the if statement thats checking if bullet hits the zombie
+                            // below is the if statement thats checking if bullet hits the virus
                             if (x.Bounds.IntersectsWith(j.Bounds))
                             {
                                 score++; // increase the kill score by 1
                                 this.Controls.Remove(j); // this remove the bullet for the screen
                                 j.Dispose(); // this will dispose the bullet all together from the program
-                                this.Controls.Remove(x); // this will remove the zombie from the program
+                                this.Controls.Remove(x); // this will remove the virus from the program
                                 x.Dispose(); // this will dispose the zombie from program
-                                makezombies(); // this function will invoke the make zombies function to add another zombie to the game
+                                makeVirus(); // this function will invoke the make virus function to add another virus to the game
                             }
                         }
                     }
-                }
             }
-           
         }
 
-        
+        /*private void DropAmmo()
+        {
+            // this function will make a ammo image for this game
+
+            PictureBox ammo = new PictureBox()
+        }*/
 
         private void shoot(string direct)
-        {
+            {
             // this is the function thats makes the new bullets in this game
 
             bullet shoot = new bullet(); // create a new instance of the bullet class
             shoot.direction = direct; // assignment the dirction to the bullet
-            shoot.bulletLeft = picPlayer.Left + (picPlayer.Width / 2); // place the bullet to left half of the player
-            shoot.bulletLeft = picPlayer.Top + (picPlayer.Height / 2); // place the bullet on top half of the player
-            shoot.mkBullet(this); // run the function mkBullet from the bullet class.
-        }
+            shoot.bulletLeft = picPlayer.Left + (picPlayer.Width = 78); // place the bullet to left half of the player
+            shoot.bulletTop = picPlayer.Top + (picPlayer.Height = 78); // place the bullet on top half of the player
+            shoot.makeBullet(this); // run the function mkBullet from the bullet class.
+            }
+    
+           private void makeVirus()
+           {
+            // when this function is called it will make virus in the game
 
-        private void makezombies()
-        {
-            // when this function is called it will make zombie in the game
-
-            PictureBox zombie = new PictureBox(); // create a new picture box called zombie
-            zombie.Tag = "zombie"; // add a tag to it called zombie
-            zombie.Image = Properties.Resources.zdown; // the default picture for the zombie is zbown
-            zombie.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new zombie left
-            zombie.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new zombie top
-            zombie.SizeMode = PictureBoxSizeMode.AutoSize; // set auto size for the new picture box
-            this.Controls.Add(zombie); // add the picture box to the screen
+            PictureBox virus = new PictureBox(); // create a new picture box called virus
+            virus.Tag = "virus"; // add a tag to it called virus
+            virus.Image = Properties.Resources.Backteriophage; // the default picture for the virus is zbown
+            virus.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new virus left
+            virus.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new virus top
+            virus.SizeMode = PictureBoxSizeMode.StretchImage; // set auto size for the new picture box
+            virus.Size = new Size(58, 62);
+            this.Controls.Add(virus); // add the picture box to the screen
             picPlayer.BringToFront(); // bring the player to the front
-        }
-        
-        private void makezombies()
-        {
-            // when this function is called it will make zombie in the game
-
-            PictureBox zombie = new PictureBox(); // create a new picture box called zombie
-            zombie.Tag = "zombie"; // add a tag to it called zombie
-            zombie.Image = Properties.Resources.zdown; // the default picture for the zombie is zbown
-            zombie.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new zombie left
-            zombie.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new zombie top
-            zombie.SizeMode = PictureBoxSizeMode.AutoSize; // set auto size for the new picture box
-            this.Controls.Add(zombie); // add the picture box to the screen
-            picPlayer.BringToFront(); // bring the player to the front
-        }
-        
-        private void makezombies()
-        {
-            // when this function is called it will make zombie in the game
-
-            PictureBox zombie = new PictureBox(); // create a new picture box called zombie
-            zombie.Tag = "zombie"; // add a tag to it called zombie
-            zombie.Image = Properties.Resources.zdown; // the default picture for the zombie is zbown
-            zombie.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new zombie left
-            zombie.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new zombie top
-            zombie.SizeMode = PictureBoxSizeMode.AutoSize; // set auto size for the new picture box
-            this.Controls.Add(zombie); // add the picture box to the screen
-            picPlayer.BringToFront(); // bring the player to the front
-        }
-
-        
-
-
-
-       
-
-
+            }
     }
+           
 }
+
+        
+
+        
+        
+        /*private void makezombies()
+        {
+            // when this function is called it will make zombie in the game
+
+            PictureBox zombie = new PictureBox(); // create a new picture box called zombie
+            zombie.Tag = "zombie"; // add a tag to it called zombie
+            zombie.Image = Properties.Resources.zdown; // the default picture for the zombie is zbown
+            zombie.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new zombie left
+            zombie.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new zombie top
+            zombie.SizeMode = PictureBoxSizeMode.AutoSize; // set auto size for the new picture box
+            this.Controls.Add(zombie); // add the picture box to the screen
+            picPlayer.BringToFront(); // bring the player to the front
+        }
+        
+        private void makezombies()
+        {
+            // when this function is called it will make zombie in the game
+
+            PictureBox zombie = new PictureBox(); // create a new picture box called zombie
+            zombie.Tag = "zombie"; // add a tag to it called zombie
+            zombie.Image = Properties.Resources.zdown; // the default picture for the zombie is zbown
+            zombie.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new zombie left
+            zombie.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new zombie top
+            zombie.SizeMode = PictureBoxSizeMode.AutoSize; // set auto size for the new picture box
+            this.Controls.Add(zombie); // add the picture box to the screen
+            picPlayer.BringToFront(); // bring the player to the front
+        }*/
+
+        
+
 
