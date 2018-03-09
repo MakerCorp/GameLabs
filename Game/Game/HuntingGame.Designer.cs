@@ -36,12 +36,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.picPlayer = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picSubmarine = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSubmarine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +86,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.gameEngine);
             // 
@@ -112,15 +109,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "virus";
-            // 
-            // picSubmarine
-            // 
-            this.picSubmarine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.picSubmarine.Location = new System.Drawing.Point(386, 88);
-            this.picSubmarine.Name = "picSubmarine";
-            this.picSubmarine.Size = new System.Drawing.Size(100, 50);
-            this.picSubmarine.TabIndex = 10;
-            this.picSubmarine.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -152,7 +140,6 @@
             this.ClientSize = new System.Drawing.Size(923, 667);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.picSubmarine);
             this.Controls.Add(this.picPlayer);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBar1);
@@ -162,10 +149,10 @@
             this.Name = "HuntingGame";
             this.Text = "Hunting";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSubmarine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
@@ -182,7 +169,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picPlayer;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox picSubmarine;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
     }

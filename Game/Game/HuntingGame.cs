@@ -33,13 +33,18 @@ namespace Game
         string bulletGuide = "up"; // This string is called bulletGuide and it will be used to guide the bullets
         double submarineHealth = 100; //This double variable is called player health
         int speed = 10; // This integer is for the speed of the player
-        int ammo = 10; // This integer will hold the number of ammo the player has start of the game
+        int ammo = 1500; // This integer will hold the number of ammo the player has start of the game
         int enemiesSpeed = 3; // This integer will the speed which the zombies move in the game
         int score = 0; // This integer will hold the score the player achieved through the game
         bool gameOver = false; // This boolean is false in the beginning and it will be used when the game is finished
         Random rnd = new Random(); // This is an instance of the random class we will use this to create a random number for this game
 
             // End of variables
+
+        private void keyisdown(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+
+        }
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
@@ -128,6 +133,9 @@ namespace Game
 
         private void gameEngine(object sender, EventArgs e)
         {
+            
+
+
             if (submarineHealth > 1) // if player health is greater then 1
             {
                 progressBar1.Value = Convert.ToInt32(submarineHealth); // assign the progress bar to the player health integer
@@ -138,6 +146,7 @@ namespace Game
                 //picPlayer.Image = Properties.Resources.dead; // show the player dead image
                 timer1.Stop(); // stop the timer
                 gameOver = true; // change game over to true
+                
             }
 
             label1.Text = "   Ammo:   " + ammo; // show the ammo amount on label 1
@@ -223,32 +232,32 @@ namespace Game
                 {
                     // below is the if statement thats checking if the bounds of the player and the virus
 
-                    if(((PictureBox)x).Bounds.IntersectsWith(picSubmarine.Bounds))
+                    if(((PictureBox)x).Bounds.IntersectsWith(picPlayer.Bounds))
                     {
                         submarineHealth -= 1; // if the virus hits the submarine the we decrase the health by 1
                     }
 
                     // move viurs towards the submarine picture box
 
-                   /* if (((PictureBox)x).Left > picSubmarine.Left)
-                    {
-                        ((PictureBox)x).Left -= enemiesSpeed; // move virus towards the left of the submarine
-                    }
+                     if (((PictureBox)x).Left > picPlayer.Left)
+                     {
+                         ((PictureBox)x).Left -= enemiesSpeed; // move virus towards the left of the submarine/player
+                     }
 
-                    if (((PictureBox)x).Top > picSubmarine.Top)
-                    {
-                        ((PictureBox)x).Top -= enemiesSpeed; // move virus towards the left of the submarine
-                    }
+                     if (((PictureBox)x).Top > picPlayer.Top)
+                     {
+                         ((PictureBox)x).Top -= enemiesSpeed; // move virus towards the left of the submarine/player
+                     }
 
-                    if (((PictureBox)x).Left < picSubmarine.Left)
-                    {
-                        ((PictureBox)x).Left += enemiesSpeed; // move virus towards the left of the submarine
-                    }
+                     if (((PictureBox)x).Left < picPlayer.Left)
+                     {
+                         ((PictureBox)x).Left += enemiesSpeed; // move virus towards the left of the submarine/player
+                     }
 
-                    if (((PictureBox)x).Top < picSubmarine.Top)
-                    {
-                        ((PictureBox)x).Top += enemiesSpeed; // move virus towards the left of the submarine
-                    } */
+                     if (((PictureBox)x).Top < picPlayer.Top)
+                     {
+                         ((PictureBox)x).Top += enemiesSpeed; // move virus towards the left of the submarine/player
+                     } 
                 }
                     // below is the second for loop, this is nexted inside the first one
                     // the bullet and zombie needs to be different than each other
@@ -288,8 +297,8 @@ namespace Game
 
             bullet shoot = new bullet(); // create a new instance of the bullet class
             shoot.direction = direct; // assignment the dirction to the bullet
-            shoot.bulletLeft = picPlayer.Left + (picPlayer.Width = 78); // place the bullet to left half of the player
-            shoot.bulletTop = picPlayer.Top + (picPlayer.Height = 78); // place the bullet on top half of the player
+            shoot.bulletLeft = picPlayer.Left + (picPlayer.Width = 175); // place the bullet to left half of the player
+            shoot.bulletTop = picPlayer.Top + (picPlayer.Height = 100); // place the bullet on top half of the player
             shoot.makeBullet(this); // run the function mkBullet from the bullet class.
             }
     
@@ -302,11 +311,12 @@ namespace Game
             virus.Image = Properties.Resources.Backteriophage; // the default picture for the virus is zbown
             virus.Left = rnd.Next(0, 900); // generate a number between 0 and 900 and assignment that to the new virus left
             virus.Top = rnd.Next(0, 800); // generate a number between 0 and 800 and assignment that to the new virus top
-            virus.SizeMode = PictureBoxSizeMode.StretchImage; // set auto size for the new picture box
+            virus.SizeMode = PictureBoxSizeMode.Zoom; // set auto size for the new picture box
             virus.Size = new Size(58, 62);
             this.Controls.Add(virus); // add the picture box to the screen
             picPlayer.BringToFront(); // bring the player to the front
             }
+
     }
            
 }
